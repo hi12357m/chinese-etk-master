@@ -1,0 +1,47 @@
+name: Keep Streamlit App Awake
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  wake-up:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Playwright and Chromium
+        run: |
+          pip install playwright
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Visit App and Click Wake Up if Sleeping
+        env:
+          APP_URL: "https://chinese-etk-master-gkul4x75naj8xlbg3itap8.streamlit.app/"
+        run: |
+          python -c "
+          import os
+          from playwright.sync_api import sync_playwright
+
+          url = os.environ['APP_URL']
+          with sync_playwright() as p:
+              browser = p.chromium.launch(headless=True)
+              page = browser.new_page()
+              page.goto(url, wait_until='networkidle')
+              
+              wake_button = page.locator('button:has-text(\"Yes, get this app back up!\")')
+              if wake_button.is_visible():
+                  print('App was asleep. Clicking wake up button...')
+                  wake_button.click()
+                  page.wait_for_timeout(15000)
+              else:
+                  print('App is already awake.')
+                  page.wait_for_timeout(5000)
+              
+              browser.close()
+          "
