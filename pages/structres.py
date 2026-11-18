@@ -43,11 +43,12 @@ sentence = st.text_area("Write your own sentence using this structure:")
 
 # Ask the AI in the background
 def ask_ai(prompt, q):
-    # The 5-second timeout forces a fast fail if the model is stuck
+    # 15-second timeout per model (good for cloud cold starts)
     client = OpenAI(
         base_url=BASE_URL, 
         api_key=st.secrets["NVIDIA_API_KEY"],
-        timeout=30 
+        timeout=15.0, 
+        max_retries=0  # <--- KEEP THIS to prevent 90-second hidden retries!
     )
     
     for model in MODELS:
@@ -61,7 +62,6 @@ def ask_ai(prompt, q):
             q.put(response)
             return
         except Exception as e:
-            # If the model is too slow or fails, it prints to your terminal and tries the next one
             print(f"Model {model} failed or timed out: {e}")
             continue
             
@@ -89,7 +89,7 @@ if st.button("Check my sentence"):
         with st.spinner("Asking the smart teacher... This may take a few moments."):
             try:
                 # Wait max 12 seconds for the background thread to finish
-                stream = q.get(timeout=12)
+                stream = q.get(timeout=30)
                 
                 if stream == "ERROR":
                     st.error("The AI models are currently unavailable. Please try again later.")
