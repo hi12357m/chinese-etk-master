@@ -2,13 +2,9 @@ import streamlit as st
 import pandas as pd
 import random
 
+# sidebar
 with st.sidebar:
-    st.markdown("""
-    <h2 style="text-align:center;">
-         Menu
-    </h2>
-    """, unsafe_allow_html=True)
-
+    st.markdown("<h2 style='text-align:center;'>Menu</h2>", unsafe_allow_html=True)
     st.page_link("Home.py", label="Home", icon="🏠")
     st.page_link("pages/vocabulary.py", label="Vocabulary", icon="🈶")
     st.page_link("pages/listening.py", label="Listening", icon="🎧")
@@ -17,124 +13,127 @@ with st.sidebar:
 
 st.title("Fill in the blank ✏️")
 
-# Read the words and sentences from the CSV
+# read csv
 df = pd.read_csv("U2 Chinese Simplified Set 2.csv", skipinitialspace=True)
 
-words = []
-sentences = []
-for i in range(len(df)):
-    words.append(str(df["CHARACTER"][i]).strip())
-    sentences.append(str(df["Sentence"][i]).strip())
+# setup the game
+if "setup_done" not in st.session_state:
+    st.session_state.chosen_words = []
+    st.session_state.chosen_sents = []
+    
+    # grab 14 random rows
+    random_rows = random.sample(range(len(df)), 14)
+    
+    for i in random_rows:
+        st.session_state.chosen_words.append(df["CHARACTER"][i])
+        st.session_state.chosen_sents.append(df["Sentence"][i])
+        
+    # make word bank
+    st.session_state.my_bank = list(st.session_state.chosen_words)
+    random.shuffle(st.session_state.my_bank)
+    
+    # create 14 empty spaces for the blanks
+    st.session_state.blanks = ["", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+    st.session_state.selected_word = ""
+    st.session_state.is_checked = False
+    st.session_state.setup_done = True
 
-# Set up the saved values the first time the page loads
-if "sent_filled" not in st.session_state:
-    # Pick 14 random words and remember them
-    picks = random.sample(range(len(words)), 14)
-    st.session_state.sent_words = []
-    st.session_state.sent_sentences = []
-    for i in picks:
-        st.session_state.sent_words.append(words[i])
-        st.session_state.sent_sentences.append(sentences[i])
 
-    bank = st.session_state.sent_words.copy()
-    random.shuffle(bank)
-    st.session_state.sent_bank = bank
-    st.session_state.sent_selected = None
-    st.session_state.sent_filled = [None] * 14
-    st.session_state.sent_checked = False
-
-# From now on, use only the 14 saved words
-words = st.session_state.sent_words
-sentences = st.session_state.sent_sentences
-
-bank = st.session_state.sent_bank
-selected = st.session_state.sent_selected
-filled = st.session_state.sent_filled
-checked = st.session_state.sent_checked
-
-# Word bank (5 buttons per row)
+# word bank section
 st.subheader("Word bank")
-per_row = 5
-for start in range(0, len(bank), per_row):
-    bank_cols = st.columns(per_row)
-    for j in range(per_row):
-        i = start + j
-        if i >= len(bank):
-            break
 
-        word = bank[i]
+# create 5 columns for the buttons
+cols = st.columns(5)
 
-        # Colour the button if it is the selected word
-        if word == selected:
-            button_type = "primary"
-        else:
-            button_type = "secondary"
-
-        clicked = bank_cols[j].button(
-            word,
-            key="bank_" + str(i),
-            type=button_type,
-            disabled=(word in filled or checked),   # greyed out once it is used
-            use_container_width=True,
-        )
-
-        if clicked:
-            st.session_state.sent_selected = word
-            st.rerun()
-
-st.divider()
-
-# Sentences with blanks
-for i in range(len(words)):
-    # Split the sentence into the part before and after the word
-    before, middle, after = sentences[i].partition(words[i])
-
-    col1, col2, col3 = st.columns([4, 2, 4])
-    col1.write(str(i + 1) + ". " + before)
-
-    # The blank shows the word that was placed, or ＿＿＿ if empty
-    if filled[i] is None:
-        blank_label = "＿＿＿"
+for i in range(len(st.session_state.my_bank)):
+    word = st.session_state.my_bank[i]
+    
+    # figure out which column to put the button in
+    if i < 5:
+        col = cols[0]
+    elif i < 10:
+        col = cols[1]
+    elif i < 15:
+        col = cols[2]
     else:
-        blank_label = filled[i]
+        col = cols[3]
 
-    clicked = col2.button(
-        blank_label,
-        key="blank_" + str(i),
-        disabled=checked,
-        use_container_width=True,
-    )
-    col3.write(after)
+    # button color
+    if word == st.session_state.selected_word:
+        button_style = "primary"
+    else:
+        button_style = "secondary"
 
-    if clicked:
-        if filled[i] is None and selected is not None:
-            # Put the selected word into this blank
-            filled[i] = selected
-            st.session_state.sent_selected = None
-        elif filled[i] is not None:
-            # Take the word back out of the blank
-            filled[i] = None
+    # disable if already used
+    if word in st.session_state.blanks:
+        cant_click = True
+    elif st.session_state.is_checked == True:
+        cant_click = True
+    else:
+        cant_click = False
+
+    if col.button(word, key="w_btn_" + str(i), type=button_style, disabled=cant_click, use_container_width=True):
+        st.session_state.selected_word = word
         st.rerun()
 
 st.divider()
 
-# Check the answers
-if not checked:
+# sentences section
+for i in range(14):
+    sentence = st.session_state.chosen_sents[i]
+    target_word = st.session_state.chosen_words[i]
+    
+    # split sentence into two parts
+    parts = sentence.split(target_word)
+    before = parts[0]
+    
+    # get the after part if it exists
+    if len(parts) > 1:
+        after = parts[1]
+    else:
+        after = ""
+
+    # make columns for layout
+    col1, col2, col3 = st.columns([4, 2, 4])
+    
+    col1.write(str(i + 1) + ". " + before)
+    
+    # check what to put in the blank button
+    if st.session_state.blanks[i] == "":
+        blank_text = "＿＿＿"
+    else:
+        blank_text = st.session_state.blanks[i]
+        
+    if col2.button(blank_text, key="b_btn_" + str(i), disabled=st.session_state.is_checked, use_container_width=True):
+        # if blank is empty and we have a word selected, fill it
+        if st.session_state.blanks[i] == "" and st.session_state.selected_word != "":
+            st.session_state.blanks[i] = st.session_state.selected_word
+            st.session_state.selected_word = ""
+        # if blank has a word, empty it
+        elif st.session_state.blanks[i] != "":
+            st.session_state.blanks[i] = ""
+        st.rerun()
+        
+    col3.write(after)
+
+st.divider()
+
+# check answers section
+if st.session_state.is_checked == False:
     if st.button("Check answers"):
-        st.session_state.sent_checked = True
+        st.session_state.is_checked = True
         st.rerun()
 else:
     score = 0
-    for i in range(len(words)):
-        if filled[i] == words[i]:
+    for i in range(14):
+        if st.session_state.blanks[i] == st.session_state.chosen_words[i]:
             score = score + 1
             st.success(str(i + 1) + ". Correct!")
         else:
-            st.error(str(i + 1) + ". The answer is " + words[i])
-
-    st.write("Score: " + str(score) + " / " + str(len(words)))
-
+            st.error(str(i + 1) + ". The answer is " + st.session_state.chosen_words[i])
+            
+    st.write("Score: " + str(score) + " / 14")
+    
     if st.button("Try again"):
-        # Delete the saved values so the page picks 14 new words
-        del st.session_state.sent_filled
+        del st.session_state.setup_done
         st.rerun()
