@@ -67,7 +67,7 @@ def ask_ai(prompt, q):
             
     q.put("ERROR")
 
-# --- THE MAIN BUTTON LOGIC ---
+# button logic
 if st.button("Check my sentence"):
     if sentence.strip() == "":
         st.warning("Please write a sentence first.")
