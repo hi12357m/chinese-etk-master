@@ -1,3 +1,6 @@
 streamlit
 pandas
 gTTS
+streamlit
+pandas
+openai
