@@ -1,8 +1,8 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Chinese ETK Master",
-    page_icon="🐉",
+    page_title="Chinese ETK Trainer",
+    page_icon="🈶",
     layout="wide"
 )
 
@@ -55,7 +55,32 @@ div.st-key-vocab button:hover {
 div.st-key-vocab button:hover p {
     color: white !important;
 }
+
+/* Sentence button */
+div.st-key-sentences button {
+    background-color: #57b4fa !important;
+    color: white !important;
+    border-color: #57b4fa !important;
+}
+
+div.st-key-sentences button p {
+    color: white !important;
+}
+
+
+/* Sentence hover effect */
+div.st-key-sentences button:hover {
+    background-color: #1e9bfa !important;
+    color: white !important;
+    border-color: #1e9bfa !important;
+}
+
+div.st-key-sentences button:hover p {
+    color: white !important;
+}
 </style>
+
+
 """, unsafe_allow_html=True)
 
 with st.sidebar:
@@ -74,7 +99,7 @@ with st.sidebar:
 
 st.markdown("""
 <h1 style="text-align:center;">
-🐉 Chinese ETK Master
+🈶 Chinese ETK Trainer
 </h1>
 """, unsafe_allow_html=True)
 
