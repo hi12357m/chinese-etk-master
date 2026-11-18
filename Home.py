@@ -69,6 +69,7 @@ with st.sidebar:
     st.page_link("pages/vocabulary.py", label="Vocabulary", icon="🈶")
     st.page_link("pages/listening.py", label="Listening", icon="🎧")
     st.page_link("pages/sentences.py", label="Sentences", icon="📝")
+    st.page_link("pages/structres.py", label="Structures", icon="🧩")
 
 
 st.markdown("""
