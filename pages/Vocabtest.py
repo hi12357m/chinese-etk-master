@@ -31,4 +31,7 @@ if st.button("Check my answer"):
     #fetch -> locate -> stay with session state -> get the first value of character csv
     st.write(f"Correct answer: {correct_character}")
 
+st.button("Leave", on_click=lambda: st.switch_page("pages/vocabulary.py") )
+    
+
 
