@@ -48,7 +48,7 @@ def ask_ai(prompt, q):
         base_url=BASE_URL, 
         api_key=st.secrets["NVIDIA_API_KEY"],
         timeout=15.0, 
-        max_retries=0  # <--- KEEP THIS to prevent 90-second hidden retries!
+        max_retries=0 
     )
     
     for model in MODELS:
@@ -108,7 +108,6 @@ if st.button("Check my sentence"):
             except queue.Empty:
                 st.warning("⚠️ The AI is taking too long to respond. Please try again.")
 
-# --- VOCABULARY LIST AT BOTTOM ---
 df = pd.read_csv("U2 Chinese Simplified Set 1.csv")
 df.index = df.index + 1
 st.dataframe(df, use_container_width=True)

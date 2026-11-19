@@ -78,7 +78,31 @@ div.st-key-sentences button:hover {
 div.st-key-sentences button:hover p {
     color: white !important;
 }
+
+/* structures button */
+div.st-key-structures button {
+    background-color: #ff8000 !important;
+    color: white !important;
+    border-color: #ff8000 !important;
+}
+
+div.st-key-structures button p {
+    color: white !important;
+}
+
+
+/* structures hover effect */
+div.st-key-structures button:hover {
+    background-color: #c96704 !important;
+    color: white !important;
+    border-color: #c96704 !important;
+}
+
+div.st-key-structures button:hover p {
+    color: white !important;
+}
 </style>
+
 
 
 """, unsafe_allow_html=True)
@@ -121,3 +145,7 @@ with st.container(border=True):
             st.switch_page("pages/sentences.py")
 
     col3, col4 = st.columns(2, gap="medium")
+
+    with col3:
+        if st.button("🧩 Structures", key="structures", width="stretch"):
+            st.switch_page("pages/structres.py")
