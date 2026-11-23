@@ -19,7 +19,7 @@ weight = 400
 
 
 
-[theme]
+[theme]wd
 base = "light"
 backgroundColor = "#f0eee6"
 secondaryBackgroundColor = "#E3DACC"

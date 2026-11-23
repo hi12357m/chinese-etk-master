@@ -78,7 +78,7 @@ if st.button("Check my sentence"):
             "You are a friendly Chinese teacher. The student must use the structure " + choice + ". "
             "Their sentence is: " + sentence + "\n\n"
             "Reply in English:\n"
-            "1. Did they use the structure correctly? (yes/no)\n"
+            "1. Did they use the structure correctly?\n"
             "2. Any grammar mistakes\n"
             "3. Corrected version in Traditional Chinese\n"
             "4. One short tip."
