@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import random
-
+st.set_option("client.showSidebarNavigation", False)
 # sidebar
 with st.sidebar:
     st.markdown("<h2 style='text-align:center;'>Menu</h2>", unsafe_allow_html=True)

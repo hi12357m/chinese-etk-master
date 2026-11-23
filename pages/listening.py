@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-
+st.set_option("client.showSidebarNavigation", False)
 st.title("Under Maintenance 🛠️")
 
 with st.sidebar:

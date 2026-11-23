@@ -1,5 +1,7 @@
 import streamlit as st
 
+st.set_option("client.showSidebarNavigation", False)
+
 st.set_page_config(
     page_title="Chinese ETK Trainer",
     page_icon="🈶",

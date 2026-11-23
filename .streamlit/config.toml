@@ -1,2 +1,29 @@
+[server]
+enableStaticServing = true
+
 [client]
 showSidebarNavigation = false
+
+[theme]
+base = "light"
+primaryColor = "#D97757"
+backgroundColor = "#eef691"
+secondaryBackgroundColor = "#f0f5ba"
+font="Montserrat"
+
+# You need to define each font file you want to use.
+# Make sure the files exist in your static folder.
+
+# Normal weight
+[[theme.fontFaces]]
+family="Montserrat"
+url="app/static/Montserrat-Regular.ttf"
+style="normal"
+weight=400
+
+
+
+
+
+
+

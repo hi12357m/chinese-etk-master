@@ -3,6 +3,9 @@ import pandas as pd
 from gtts import gTTS
 from io import BytesIO
 
+
+st.set_option("client.showSidebarNavigation", False)
+
 # Set page config must be the first Streamlit command
 st.set_page_config(page_title="Vocabulary Master", page_icon="🈶", layout="wide")
 

@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import random
 
+st.set_option("client.showSidebarNavigation", False)
+
 df = pd.read_csv("U2 Chinese Simplified Set 1.csv")
 
 df.columns = df.columns.str.strip()

@@ -4,6 +4,8 @@ import threading
 import queue
 import pandas as pd
 
+st.set_option("client.showSidebarNavigation", False)
+
 with st.sidebar:
     st.markdown("""
     <h2 style="text-align:center;">

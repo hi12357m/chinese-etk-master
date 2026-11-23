@@ -1,28 +1,44 @@
-CHARACTER, Pinyin, English, Sentence
-饮食, yǐn shí, diet, 均衡的饮食对身体健康非常重要。
-鲜香, xiān xiāng, delicious and fragrant, 妈妈煮的鸡汤味道鲜香，我喝了两碗。
-位置, wèi zhì, location, 这家餐厅的位置很好，就在地铁站旁边。
-气候, qì hou, climate, 香港的气候很温暖，冬天不太冷。
-炎热, yán rè, burning hot, 夏天的天气十分炎热，我想吃冰淇淋。
-潮湿, cháo shī, humid; damp, 这里的春天非常潮湿，衣服很难干。
-装饰, zhuāng shì, to decorate; decoration, 我们用彩灯和气球装饰了教室。
-体会, tǐ huì, learn from experience, 学中文让我体会到了学习的乐趣。
-另外, lìng wài, in addition; besides, 我要一杯咖啡，另外再要一块蛋糕。
-享受, xiǎng shòu, to enjoy, 周末去海边散步是一种享受。
-地区, dì qū, area; district; region, 这个地区有很多好吃的餐厅。
-麻辣, má là, numbing spicy, 我不太能吃麻辣火锅，因为真的太辣了。
-配料, pèi liào, ingredients; auxiliary food ingredients/condiments, 做这个菜需要准备什么配料？
-礼仪, lǐ yí, etiquette; code of conduct/manners, 吃饭时不要玩手机，这是基本礼仪。
-品尝, pǐn cháng, to taste carefully, 欢迎品尝我们店里的新鲜蛋糕。
-赖以生存, lài yǐ shēng cún, rely on to survive, 干净的水是我们赖以生存的重要资源。
-口味, kǒu wèi, flavor; taste of food, 你喜欢吃什么口味的冰淇淋？
-悠久历史, yōu jiǔ lì shǐ, long history, 北京是一座有悠久历史的城市。
-菜系, cài xì, cuisine; style of cooking, 中国有八大菜系，你最喜欢哪一个？
-讲究, jiǎng jiu, to pay attention to; exquisite; particulars, 他穿衣服很讲究，总是搭配得很好。
-特色, tè sè, characteristic; feature, 北京烤鸭是这家餐厅的特色菜。
-多样, duō yàng, diverse; variety, 学校食堂的早餐种类很多样。
-搭配, dā pèi, to match; to combine, 白色的衣服搭配蓝色的裤子很好看。
-地域广阔, dì yù guǎng kuò, vast territory, 中国地域广阔，每个地方的饮食文化都不一样。
-地大物博, dì dà wù bó, vast land and abundant resources, 中国是一个地大物博的国家。
-体现, tǐ xiàn, to reflect; to embody, 这幅画体现了他对大自然的热爱。
-独特, dú tè, unique, 每个人都有自己独特的想法。
+"CHARACTER","Pinyin","English","Sentence"
+"油","yóu","oil","炒青菜的时候先往锅里倒一点油，等油热了再放葱姜蒜。"
+"盐","yán","salt","汤煮好以后先尝一下味道，如果不够咸再加一点盐。"
+"辣酱","làjiàng","chili sauce","我吃面条的时候喜欢加一勺辣酱，这样味道会更香更辣。"
+"醋","cù","vinegar","吃饺子的时候可以在小碟子里倒一点醋，再放几滴芝麻油。"
+"葱","cōng","scallion","把葱洗干净以后切成葱花，最后撒在汤里会更好看。"
+"姜","jiāng","ginger","炖肉的时候放几片姜，可以帮助去腥，让肉的味道更好。"
+"蒜","suàn","garlic","炒茄子的时候放一点蒜末，整道菜的香味会更浓。"
+"花椒","huājiāo","Sichuan peppercorn","做麻辣口味的菜时放几粒花椒，吃起来会有一点麻的感觉。"
+"大料","dàliào","star anise","红烧肉的时候放一颗大料和一小块桂皮，香味会更足。"
+"桂皮","guìpí","cassia bark","炖牛肉的时候加一小块桂皮，可以让汤汁的味道更丰富。"
+"酱油","jiàngyóu","soy sauce","炒饭的时候加一点酱油，不但能调味，还能让颜色更好看。"
+"胡椒粉","hújiāofěn","pepper powder","汤快出锅的时候撒一点胡椒粉，喝起来会更暖更香。"
+"芝麻油","zhīmayóu","sesame oil","凉拌黄瓜做好以后滴几滴芝麻油，味道会立刻香很多。"
+"辣椒","làjiāo","chili pepper","这个辣椒看起来不大，但是吃起来特别辣，所以不要放太多。"
+"料酒","liàojiǔ","cooking wine","腌肉的时候加一点料酒和姜片，可以去掉肉的腥味。"
+"鸡精","jījīng","chicken essence","菜快出锅的时候加少许鸡精，再翻几下就可以装盘了。"
+"白砂糖","báishātáng","white granulated sugar","做糖醋排骨的时候放一点白砂糖，酸甜的味道会更平衡。"
+"片","piàn","slice","把黄瓜洗干净以后切成薄片，摆在盘子里很好看。"
+"块","kuài","piece","把牛肉切成大小差不多的块，这样炖的时候更容易熟。"
+"丝","sī","shred","土豆去皮以后切成细丝，泡在水里可以防止变黑。"
+"条","tiáo","strip","把豆腐切成长条，放进锅里煎到两面金黄。"
+"沫","mò","minced bits","把蒜剁成细沫，和酱油醋一起拌成蘸料。"
+"丁","dīng","dice","把胡萝卜和黄瓜切成小丁，炒饭的时候颜色很好看。"
+"切","qiē","cut","切菜的时候要注意安全，手指不要离刀太近。"
+"剁","duò","chop","做饺子馅的时候要把肉剁得细一点，吃起来口感更好。"
+"蒸","zhēng","steam","把鱼放进蒸锅里蒸十分钟，出锅以后再淋一点酱油。"
+"煮","zhǔ","boil","水开以后把面条放进锅里煮，煮好以后马上捞出来。"
+"煎","jiān","pan-fry","把鸡蛋打进锅里慢慢煎，煎到边缘有点焦会更香。"
+"炸","zhá","deep-fry","油温升高以后把鸡块放进去炸，炸到金黄色就可以捞出。"
+"炒","chǎo","stir-fry","先把锅烧热再放油，然后把青菜放进去快速翻炒。"
+"炖","dùn","stew","把排骨和萝卜放进锅里慢慢炖，炖到汤变成白色。"
+"红烧","hóngshāo","red-braise","今天我做了一盘红烧肉，颜色红亮，味道又香又甜。"
+"烤","kǎo","roast","把腌好的鸡翅放进烤箱里烤二十分钟，中途记得翻一次面。"
+"拌","bàn","mix","把黄瓜丝和蒜末放在一起，加一点盐和醋拌均匀。"
+"焖","mèn","braise with lid","把米饭和菜放进锅里，盖上锅盖焖十分钟会更入味。"
+"腌","yān","marinate","把鱼洗干净以后用盐和料酒腌一会儿，可以去腥。"
+"涮","shuàn","instant-boil","冬天吃火锅的时候，大家喜欢把羊肉片放进汤里涮一涮。"
+"酸","suān","sour","这个柠檬吃起来很酸，可以切几片泡在水里喝。"
+"甜","tián","sweet","这个西瓜又红又甜，夏天吃一块特别舒服。"
+"苦","kǔ","bitter","苦瓜虽然有一点苦，但是和鸡蛋一起炒很好吃。"
+"辣","là","spicy","这道菜放了很多辣椒，所以吃起来特别辣。"
+"咸","xián","salty","今天的汤有点咸，下次少放一点盐会更好。"
+"色香味俱全","sè xiāng wèi jù quán","complete in color aroma and taste","这道菜不但颜色好看，而且闻起来很香，吃起来味道也很好，真是色香味俱全。"
