@@ -112,3 +112,9 @@ if st.button("Check my sentence"):
 df = pd.read_csv("U2 Chinese Simplified Set 1.csv")
 df.index = df.index + 1
 st.dataframe(df, use_container_width=True)
+
+
+
+df = pd.read_csv("U2 Chinese Traditional Set 1.csv")
+df.index = df.index + 1
+st.dataframe(df, use_container_width=True)
