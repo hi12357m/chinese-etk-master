@@ -108,12 +108,13 @@ if st.button("Check my sentence"):
 
             except queue.Empty:
                 st.warning("⚠️ The AI is taking too long to respond. Please try again.")
-
+st.caption("Simplified")
 df = pd.read_csv("U2 Chinese Simplified Set 1.csv")
 df.index = df.index + 1
 st.dataframe(df, use_container_width=True)
 
-
+st.write("")
+st.caption("Traditional")
 
 df = pd.read_csv("U2 Chinese Traditional Set 1.csv")
 df.index = df.index + 1
