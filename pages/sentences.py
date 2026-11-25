@@ -94,7 +94,7 @@ with st.sidebar:
     st.page_link("pages/sentences.py", label="Sentences", icon="📝")
     st.page_link("pages/structres.py", label="Structures", icon="🧩")
 
-st.title("Vocabulary 🈶")
+st.title("Sentences ")
 
 
 
