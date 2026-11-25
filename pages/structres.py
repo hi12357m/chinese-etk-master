@@ -80,7 +80,7 @@ if st.button("Check my sentence"):
             "1. Did they use the structure correctly?\n"
             "2. Any grammar mistakes\n"
             "3. Corrected version in Traditional Chinese\n"
-            "4. One short tip."
+            "4. One short tip. Also make sure all responses are constructive feedback."
         )
 
         q = queue.Queue()
