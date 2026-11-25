@@ -1,25 +1,13 @@
 [server]
 enableStaticServing = true
 
-[client]
-showSidebarNavigation = false
-
-
-
 [[theme.fontFaces]]
-
-
-
-
 family = "Arial"
 url = "app/static/arial-cufonfonts/ARIAL.TTF"
 style = "normal"
 weight = 400
 
-
-
-
-[theme]wd
+[theme]
 base = "light"
 backgroundColor = "#f0eee6"
 secondaryBackgroundColor = "#E3DACC"
@@ -31,10 +19,14 @@ font = "Arial"
 
 # Normal weight
 [[theme.fontFaces]]
-family="Montserrat"
-url="app/static/Montserrat-Regular.ttf"
-style="normal"
-weight=400
+family = "Montserrat"
+url = "app/static/Montserrat-Regular.ttf"
+style = "normal"
+weight = 400
+
+[client]
+showSidebarNavigation = false
+
 
 
 
